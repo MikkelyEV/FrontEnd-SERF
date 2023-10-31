@@ -1,0 +1,39 @@
+<h1> PRIMA POR COBRAR </h1>
+<!-- Selector -->
+<div class="align-left">
+  <!-- Oficina -->
+  <mat-form-field class="full20" appearance="outline">
+    <mat-label>Oficina</mat-label>
+    <mat-select (selectionChange)="changeSelectOficina($event.value)" required>
+      <mat-option *ngFor="let oficina of oficinas" [value]="oficina.clave_oficina">
+        {{oficina.clave_oficina}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<!-- Doláres -->
+<br><br>
+<div class="align-center">
+  <div class="centered-box">
+    <div class="border-box">
+      <div class="header">
+        Dólares
+      </div>
+      <br>
+      <div class="total">
+        <span><b>{{ total | currency:'USD':'symbol':'1.0-0' }}</b></span>
+      </div>
+      <br>
+      <div class="percentages">
+        <div class="percentage-pagado">
+          <mat-icon class="icon-green">check_circle</mat-icon> {{ porcentaje_pagado }}%
+          <div class="total-pagado">{{ total * (porcentaje_pagado / 100) | currency:'USD':'symbol':'1.0-0' }}</div>
+        </div>
+        <div class="percentage-pendiente">
+          <mat-icon class="icon-red">cancel</mat-icon> {{ porcentaje_pendiente }}%
+          <div class="total-pendiente">{{ total * (porcentaje_pendiente / 100) | currency:'USD':'symbol':'1.0-0' }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

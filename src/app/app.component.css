@@ -1,0 +1,90 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+h1 {
+  font-family: Arial, sans-serif;
+  font-size: 38px;
+  font-weight: bold;
+  text-align: center;
+  color: black;
+}
+
+.full20 {
+  width: 20%;
+}
+
+div.align-left {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+}
+
+div.align-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%
+}
+
+.border-box {
+  border: 2px solid black;
+  padding: 20px;
+  width: 20%;
+}
+
+.header {
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+}
+
+.total{
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.percentages {
+  display: flex;
+  justify-content: space-between;
+}
+
+.percentage-pendiente{
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: red;
+}
+
+.total-pendiente{
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  color: red;
+  text-align: center;
+}
+
+.percentage-pagado {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: rgb(104, 104, 192);
+}
+
+.total-pagado {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  color: rgb(104, 104, 192);
+  text-align: center;
+}
+
+.icon-red{
+  color:red;
+}
+.icon-green {
+  color: rgb(13, 68, 13);
+}
+
