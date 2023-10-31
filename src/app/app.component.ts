@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   protected selectedOficina: any;
   protected showSpinner = false;
   protected total = 100;
-  protected porcentaje_pendiente = 10;
+  protected porcentaje_pendiente = 80;
   protected porcentaje_pagado = 20;
   displayedColumns: string[] = ['fianza', 'movimiento', 'fiado', 'antigüedad', 'dias_vencimiento', 'importe'];
   protected dataSource!: MatTableDataSource<any>;
