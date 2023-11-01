@@ -38,7 +38,6 @@ export class AppComponent implements OnInit {
       this.dataSvc.get<any>(this.urlOficinas).subscribe(
         res => {
           this.oficinas = res;
-          console.log(this.oficinas);
         },
         err => {
           console.log('Error al recuperar las oficinas', err);
