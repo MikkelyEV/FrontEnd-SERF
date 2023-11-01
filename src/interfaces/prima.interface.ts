@@ -6,6 +6,6 @@ export interface PrimaPendiente {
   fecha_inicio: Date;
   fecha_fin: Date;
   importe: number;
-  antigüedad: number;
+  antiguedad: number;
   dias_vencidos: number;
 }

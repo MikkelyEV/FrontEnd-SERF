@@ -27,68 +27,81 @@
       <div class="percentages">
         <div class="percentage-pagado">
           <mat-icon class="icon-green">check_circle</mat-icon> {{ porcentaje_pagado }}%
-          <div class="total-pagado">{{ total * (porcentaje_pagado / 100) | currency:'USD':'symbol':'1.0-0' }}</div>
+          <div class="total-pagado">{{ total_pagado | currency:'USD':'symbol':'1.0-0' }}</div>
         </div>
         <div class="percentage-pendiente">
           <mat-icon class="icon-red">cancel</mat-icon> {{ porcentaje_pendiente }}%
-          <div class="total-pendiente">{{ total * (porcentaje_pendiente / 100) | currency:'USD':'symbol':'1.0-0' }}</div>
+          <div class="total-pendiente">{{ total_pendiente | currency:'USD':'symbol':'1.0-0' }}</div>
         </div>
       </div>
     </div>
   </div>
 </div>
-
+<br> <br>
 <div class="align-center-t">
-  <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- fianza -->
     <ng-container matColumnDef="fianza">
       <th mat-header-cell *matHeaderCellDef> Fianza </th>
-      <td mat-cell *matCellDef="let row" align="left">
+      <td mat-cell *matCellDef="let row">
         {{ row.id_fianza }}
       </td>
+      <td mat-footer-cell *matFooterCellDef align="center"> <b>TOTAL</b> </td>
     </ng-container>
 
     <!-- movimiento -->
     <ng-container matColumnDef="movimiento">
       <th mat-header-cell *matHeaderCellDef> Movimiento </th>
-      <td mat-cell *matCellDef="let row" align="left">
+      <td mat-cell *matCellDef="let row">
         {{ row.tipo_movimiento }}
       </td>
+      <td mat-footer-cell *matFooterCellDef> </td>
     </ng-container>
 
     <!-- fiado -->
     <ng-container matColumnDef="fiado">
       <th mat-header-cell *matHeaderCellDef> Fiado </th>
-      <td mat-cell *matCellDef="let row" align="left">
+      <td mat-cell *matCellDef="let row">
         {{ row.nombre_fiado }}
       </td>
+      <td mat-footer-cell *matFooterCellDef> </td>
     </ng-container>
 
     <!-- antiguedad -->
-    <ng-container matColumnDef="antigüedad">
+    <ng-container matColumnDef="antiguedad">
       <th mat-header-cell *matHeaderCellDef> Antigüedad </th>
-      <td mat-cell *matCellDef="let row" align="left">
+      <td mat-cell *matCellDef="let row" [ngClass]="{
+        'verde': row.antiguedad >= 0 && row.antiguedad <= 29,
+        'amarillo': row.antiguedad >= 30 && row.antiguedad <= 99,
+        'rojo': row.antiguedad >= 100}">
         {{ row.antiguedad }}
       </td>
+      <td mat-footer-cell *matFooterCellDef> </td>
     </ng-container>
 
     <!-- días de vencimiento -->
     <ng-container matColumnDef="dias_vencimiento">
-      <th mat-header-cell *matHeaderCellDef> Días de Vencimiento </th>
-      <td mat-cell *matCellDef="let row" align="left">
-        {{ row.dias_vencimiento }}
+      <th mat-header-cell *matHeaderCellDef> Días Vencidos </th>
+      <td mat-cell *matCellDef="let row" [ngClass]="{
+        'verde': row.dias_vencidos >= 0 && row.dias_vencidos <= 29,
+        'amarillo': row.dias_vencidos >= 30 && row.dias_vencidos <= 60,
+        'rojo': row.dias_vencidos >= 61}">
+        {{ row.dias_vencidos }}
       </td>
+      <td mat-footer-cell *matFooterCellDef> </td>
     </ng-container>
 
     <!-- importe -->
     <ng-container matColumnDef="importe">
       <th mat-header-cell *matHeaderCellDef> Importe </th>
-      <td mat-cell *matCellDef="let row" align="left">
-        {{ row.importe }}
+      <td mat-cell *matCellDef="let row">
+      {{ row.importe | currency:'USD':'symbol':'1.0-0' }}
       </td>
+      <td mat-footer-cell *matFooterCellDef> <b>{{ this.total | currency:'USD':'symbol':'1.0-0' }}</b></td>
     </ng-container>
 
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-  </mat-table>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let emprow; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+  </table>
 </div>

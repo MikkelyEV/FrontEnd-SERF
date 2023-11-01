@@ -28,7 +28,6 @@ div.align-center-t {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 80%;
 }
 
 .centered-box {
@@ -95,27 +94,52 @@ div.align-center-t {
   color: rgb(13, 68, 13);
 }
 
-.mat-header-cell {
+
+.mat-header-cell, th{
   background-color: lightgrey;
   color: black;
+  font-size: 14px;
+  width: 150px;
+  text-align: left;
   font-weight: bold;
-  font-size: 20px;
-  border: 1px solid #ccc;
+  justify-content: space-between;
 }
 
-th {
-  background-color: lightgrey;
+
+.mat-cell, td {
   color: black;
-  font-weight: bold;
-  font-size: 20px;
-  border: 1px solid #ccc;
+  font-size: 12px;
+  white-space: normal;
+  width: 150px;
+  text-align: left;
+  justify-content: space-between;
 }
 
+.verde {
+  font-size: 12px;
+  white-space: normal;
+  width: 150px;
+  text-align: left;
+  background-color: #087e39;
+  color: rgb(0, 0, 0)
+}
 
-.mat-cell {
-  background-color: white;
+.amarillo {
+  font-size: 12px;
+  white-space: normal;
+  width: 150px;
+  text-align: left;
+  background-color: #FFC107;
   color: black;
-  font-size: 18px;
-  border: 1px solid #ccc;
 }
+
+.rojo {
+  font-size: 12px;
+  white-space: normal;
+  width: 150px;
+  text-align: left;
+  background-color: #F44336;
+  color: white;
+}
+
 
