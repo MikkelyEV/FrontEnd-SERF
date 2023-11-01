@@ -24,6 +24,13 @@ div.align-center {
   justify-content: center;
 }
 
+div.align-center-t {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+}
+
 .centered-box {
   display: flex;
   align-items: center;
@@ -86,5 +93,29 @@ div.align-center {
 }
 .icon-green {
   color: rgb(13, 68, 13);
+}
+
+.mat-header-cell {
+  background-color: lightgrey;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background-color: lightgrey;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border: 1px solid #ccc;
+}
+
+
+.mat-cell {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  border: 1px solid #ccc;
 }
 
