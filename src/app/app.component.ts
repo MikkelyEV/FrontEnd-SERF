@@ -14,12 +14,11 @@ export class AppComponent implements OnInit {
   private urlOficinas = environment.appUrl + 'oficinas/';
   private urlPrimas = environment.appUrl + 'primas_pendientes/';
   public oficinas: Oficina[] = [];
-  protected selectedOficina: any;
-  protected showSpinner = false;
-  protected total = 100;
-  protected porcentaje_pendiente = 80;
-  protected porcentaje_pagado = 20;
-  displayedColumns: string[] = ['fianza', 'movimiento', 'fiado', 'antigüedad', 'dias_vencimiento', 'importe'];
+  public selectedOficina: any;
+  public total = 100;
+  public porcentaje_pendiente = 80;
+  public porcentaje_pagado = 20;
+  public displayedColumns: string[] = ['fianza', 'movimiento', 'fiado', 'antigüedad', 'dias_vencimiento', 'importe'];
 
   constructor(private dataSvc: DataService) {
   }
